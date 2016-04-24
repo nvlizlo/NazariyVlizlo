@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD1655EE1CA4A65300FA64E6 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1655ED1CA4A65300FA64E6 /* CardCollectionViewCell.swift */; };
+		CD6B6F4C1CCD2B68008E19E1 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B6F4B1CCD2B68008E19E1 /* ArrayExtension.swift */; };
 		CD87BABB1C9F075E00B73F15 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BABA1C9F075E00B73F15 /* MenuViewController.swift */; };
 		CD87BABE1C9F079500B73F15 /* UIVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BABD1C9F079500B73F15 /* UIVIewExtension.swift */; };
 		CD87BAC21C9F0A2D00B73F15 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BAC11C9F0A2D00B73F15 /* GradientButton.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		CD1655ED1CA4A65300FA64E6 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD6B6F4B1CCD2B68008E19E1 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		CD87BABA1C9F075E00B73F15 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CD87BABD1C9F079500B73F15 /* UIVIewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVIewExtension.swift; sourceTree = "<group>"; };
 		CD87BAC11C9F0A2D00B73F15 /* GradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
@@ -49,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD6B6F481CCD2B40008E19E1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD87BABD1C9F079500B73F15 /* UIVIewExtension.swift */,
+				CD6B6F4B1CCD2B68008E19E1 /* ArrayExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		CD87BAB91C9F074000B73F15 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +72,6 @@
 		CD87BABC1C9F078700B73F15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CD87BABD1C9F079500B73F15 /* UIVIewExtension.swift */,
 				CD87BAC11C9F0A2D00B73F15 /* GradientButton.swift */,
 				CD1655ED1CA4A65300FA64E6 /* CardCollectionViewCell.swift */,
 			);
@@ -96,6 +106,7 @@
 		CDE5F79D1C9DA47200CF8B65 /* VideoPoker */ = {
 			isa = PBXGroup;
 			children = (
+				CD6B6F481CCD2B40008E19E1 /* Extensions */,
 				CD87BAC31C9F0BD800B73F15 /* Models */,
 				CD87BABC1C9F078700B73F15 /* Views */,
 				CD87BAB91C9F074000B73F15 /* Controllers */,
@@ -193,6 +204,7 @@
 				CD87BABE1C9F079500B73F15 /* UIVIewExtension.swift in Sources */,
 				CD87BAC21C9F0A2D00B73F15 /* GradientButton.swift in Sources */,
 				CD87BAC71C9F0BFF00B73F15 /* Card.swift in Sources */,
+				CD6B6F4C1CCD2B68008E19E1 /* ArrayExtension.swift in Sources */,
 				CD87BACB1CA49BF900B73F15 /* Constants.swift in Sources */,
 				CDE5F79F1C9DA47200CF8B65 /* AppDelegate.swift in Sources */,
 				CD1655EE1CA4A65300FA64E6 /* CardCollectionViewCell.swift in Sources */,

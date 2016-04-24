@@ -38,8 +38,15 @@ class PlayViewController: UIViewController {
                 }
             }
         }
+        
+        deck.handCards = [Card(rank: .Three, suit: .Hearts),
+                          Card(rank: .Two, suit: .Diamonds),
+                          Card(rank: .Two, suit: .Spades),
+                          Card(rank: .Four, suit: .Clubs),
+                          Card(rank: .Three, suit: .Spades)]
         deck.checkForFlush()
         deck.checkForStraight()
+        deck.checkForAKind()
         cardsCollectionView.reloadData()
     }
 }

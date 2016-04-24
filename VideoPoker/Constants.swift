@@ -24,3 +24,8 @@ struct Constants {
     
     static let numberOfCardsOnTable = 5
 }
+
+func +(lhs: Combination, rhs: Combination) -> Combination {
+    let rawValue = lhs.rawValue + rhs.rawValue
+    return Combination(rawValue: rawValue) ?? Combination.NoHand
+}
