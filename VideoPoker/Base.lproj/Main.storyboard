@@ -151,18 +151,30 @@
                                     <outlet property="delegate" destination="9zP-f8-5Rd" id="9WC-Di-P4r"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imR-XS-0c6">
+                                <rect key="frame" x="279" y="290" width="42" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="imR-XS-0c6" firstAttribute="centerY" secondItem="Cpa-6g-3g9" secondAttribute="centerY" id="0Xq-gL-nH8"/>
                             <constraint firstItem="xgs-am-Jew" firstAttribute="top" secondItem="tAf-O7-rAV" secondAttribute="bottom" id="Cqq-pe-aog"/>
                             <constraint firstItem="tAf-O7-rAV" firstAttribute="leading" secondItem="Cpa-6g-3g9" secondAttribute="leading" id="K3D-Pk-MOc"/>
                             <constraint firstItem="Pn3-Ny-IT9" firstAttribute="centerY" secondItem="Cpa-6g-3g9" secondAttribute="centerY" id="LQ5-bC-0LS"/>
                             <constraint firstItem="Pn3-Ny-IT9" firstAttribute="centerX" secondItem="Cpa-6g-3g9" secondAttribute="centerX" id="VW4-oC-Wru"/>
+                            <constraint firstItem="imR-XS-0c6" firstAttribute="centerX" secondItem="Cpa-6g-3g9" secondAttribute="centerX" id="Xzf-Wb-jRA"/>
                             <constraint firstAttribute="trailing" secondItem="tAf-O7-rAV" secondAttribute="trailing" id="lLF-4a-bLT"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="applyButton" destination="x4H-Yl-tge" id="6KM-Bh-igW"/>
                         <outlet property="cardsCollectionView" destination="Pn3-Ny-IT9" id="QqS-IO-FDt"/>
+                        <outlet property="combinationLabel" destination="imR-XS-0c6" id="C4o-fN-m8X"/>
+                        <outlet property="startButton" destination="aJe-qb-tBq" id="SEE-D2-apB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3T-Vw-aFe" userLabel="First Responder" sceneMemberID="firstResponder"/>

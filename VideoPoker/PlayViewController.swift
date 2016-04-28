@@ -13,20 +13,22 @@ class PlayViewController: UIViewController {
     var deck = Deck()
     
     @IBOutlet weak var cardsCollectionView: UICollectionView!
+    @IBOutlet weak var startButton: UIBarButtonItem!
+    @IBOutlet weak var applyButton: UIBarButtonItem!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
+    @IBOutlet weak var combinationLabel: UILabel!
     
     @IBAction func startButtonClicked(sender: UIBarButtonItem) {
+        deck.reloadCards()
         deck.handCards.removeAll()
         cardsCollectionView.userInteractionEnabled = true
         for _ in 1...5 {
             deck.handCards.append(deck.drawRandomCard())
         }
         cardsCollectionView.reloadData()
-        sender.enabled = false
+        
+        startButton.enabled = false
+        applyButton.enabled = true
     }
     
     @IBAction func applyButtonClicked(sender: UIBarButtonItem) {
@@ -39,15 +41,26 @@ class PlayViewController: UIViewController {
             }
         }
         
-        deck.handCards = [Card(rank: .Three, suit: .Hearts),
-                          Card(rank: .Two, suit: .Diamonds),
-                          Card(rank: .Two, suit: .Spades),
-                          Card(rank: .Four, suit: .Clubs),
-                          Card(rank: .Three, suit: .Spades)]
-        deck.checkForFlush()
-        deck.checkForStraight()
-        deck.checkForAKind()
+        //        deck.handCards = [Card(rank: .Three, suit: .Hearts),
+        //                          Card(rank: .Two, suit: .Diamonds),
+        //                          Card(rank: .Two, suit: .Spades),
+        //                          Card(rank: .Four, suit: .Clubs),
+        //                          Card(rank: .Three, suit: .Spades)]
+        let combinationString = deck.checkForCombinations()
+        
+        UIView.animateWithDuration(1, animations: {
+            self.combinationLabel.text = combinationString
+            self.combinationLabel.alpha = 1
+            }, completion: { completed in
+                if completed {
+                    UIView.animateWithDuration(3) {self.combinationLabel.alpha = 0}
+                }
+        })
+        
         cardsCollectionView.reloadData()
+        
+        startButton.enabled = true
+        applyButton.enabled = false
     }
 }
 

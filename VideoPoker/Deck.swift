@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Combination: Int {
+enum Combination: Int, CustomStringConvertible {
     case NoHand = 0b0
     
     case Pair = 0b10
@@ -20,6 +20,35 @@ enum Combination: Int {
     
     case Straight = 0b111
     case Flush = 0b1000
+    
+    case StraightFlush = 0b1111
+    
+    var description: String {
+        var description = ""
+        
+        switch self {
+        case .NoHand:
+            description = "No hand"
+        case .Pair:
+            description = "Pair"
+        case .ThreeOfAKind:
+            description = "Three of a Kind"
+        case .FourOfAKind:
+            description = "Four of a Kind"
+        case .TwoPairs:
+            description = "Two pairs"
+        case .FullHouse:
+            description = "Full House"
+        case .Straight:
+            description = "Straight"
+        case .Flush:
+            description = "Flush"
+        case .StraightFlush:
+            description = "Straight Flush"
+        }
+        
+        return description
+    }
 }
 
 class Deck {
@@ -47,13 +76,26 @@ class Deck {
         return card
     }
     
+    func reloadCards() {
+        handCards.forEach({cards.append($0)})
+    }
+    
     func populateHandCards() {
         for _ in 1...5 {
             handCards.append(drawRandomCard())
         }
     }
     
-    func checkForFlush() -> Combination {
+    func checkForCombinations() -> String? {
+        var combinationDescription: String?
+        combinationDescription = checkForFlush()?.description
+        combinationDescription = checkForStraight().description
+        combinationDescription = checkForAKind()?.description
+        
+        return combinationDescription
+    }
+    
+    func checkForFlush() -> Combination? {
         //        var counter = 0
         //        if let expectedSuit = handCards.first?.suit {
         //            handCards.forEach({
@@ -76,8 +118,8 @@ class Deck {
         return currentCombination
     }
     
-    func checkForAKind() -> [Combination?] {
-        var currentCombinations = [Combination?]()
+    func checkForAKind() -> Combination? {
+        var currentCombinations = [Combination]()
         var counter = 1
         let sortedHand = handCards.sort({$0.0.rank.rawValue < $0.1.rank.rawValue})
         
@@ -88,8 +130,8 @@ class Deck {
                 if currentCard.rank == tempCard.rank {
                     counter += 1
                 } else {
-                    if counter > 0 {
-                        currentCombinations.append(Combination(rawValue: counter))
+                    if counter > 1 {
+                        currentCombinations.append(Combination(rawValue: counter)!)
                         counter = 1
                     }
                     tempCard = currentCard
@@ -97,13 +139,13 @@ class Deck {
             }
         }
         
-        currentCombinations.append(Combination(rawValue: counter))
-        return currentCombinations
+        if counter > 1 {currentCombinations.append(Combination(rawValue: counter)!)}
+        return self.evaluateCombination(currentCombinations)
     }
     
-    func evaluateCombination(combinations: [Combination]) -> Combination {
-        let rawValue = combinations.reduce(0, combine: {$0 + $1.rawValue}) - (combinations.count - 1)
-        return Combination(rawValue: rawValue)!
+    func evaluateCombination(combinations: [Combination]) -> Combination? {
+        let rawValue = combinations.reduce(0, combine: {$0 + $1.rawValue}) + (combinations.count - 1)
+        return Combination(rawValue: rawValue)
     }
 }
 
