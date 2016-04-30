@@ -11,9 +11,17 @@ import UIKit
 class CardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cardImageView: UIImageView!
+    @IBOutlet weak var holdButton: UIButton!
+    
+    var holded = false
     
     override func drawRect(rect: CGRect) {
-        backgroundView = UIImageView(image: UIImage(named: "back22"))
+        //backgroundView = UIImageView(image: UIImage(named: "back22"))
     }
     
+    @IBAction func holdButtonClicked(sender: UIButton) {
+        holded = !holded
+        let imageName = holded ? "holdButtonGreen_3x" : "holdButton_3x"
+        sender.setImage(UIImage(named: imageName) ?? UIImage(), forState: .Normal)
+    }    
 }

@@ -87,33 +87,30 @@ class Deck {
     }
     
     func checkForCombinations() -> String? {
-        var combinationDescription: String?
-        combinationDescription = checkForFlush()?.description
-        combinationDescription = checkForStraight().description
-        combinationDescription = checkForAKind()?.description
+        var currentCombination = Combination.NoHand
         
-        return combinationDescription
+        if let flushCombination = checkForFlush() {
+            currentCombination = flushCombination
+        }
+        if let straightCombination = checkForStraight() {
+            currentCombination = currentCombination + straightCombination
+        } else if let kindCombination = checkForAKind() {
+            currentCombination = kindCombination
+        }
+        
+        return currentCombination.description
     }
     
     func checkForFlush() -> Combination? {
-        //        var counter = 0
-        //        if let expectedSuit = handCards.first?.suit {
-        //            handCards.forEach({
-        //                if $0.suit == expectedSuit {
-        //                    counter += 1
-        //                }
-        //
-        //            })
-        //        }
-        return handCards.filter({$0.suit == handCards.first?.suit}).count == 5 ? .Flush : .NoHand
+        return handCards.filter({$0.suit == handCards.first?.suit}).count == 5 ? .Flush : nil
     }
     
-    func checkForStraight() -> Combination {
+    func checkForStraight() -> Combination? {
         let sortedHandCards = handCards.sort({$0.0.rank.rawValue < $0.1.rank.rawValue})
-        var currentCombination = Combination.NoHand
+        var currentCombination: Combination?
         
         if let firstCard = sortedHandCards.first, let lastCard = sortedHandCards.last {
-            currentCombination = lastCard.rank.rawValue - firstCard.rank.rawValue == 4 ? .Straight : .NoHand
+            currentCombination = lastCard.rank.rawValue - firstCard.rank.rawValue == 4 ? .Straight : nil
         }
         return currentCombination
     }

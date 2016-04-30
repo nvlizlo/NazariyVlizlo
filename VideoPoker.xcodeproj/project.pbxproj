@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		CD1655EE1CA4A65300FA64E6 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1655ED1CA4A65300FA64E6 /* CardCollectionViewCell.swift */; };
+		CD16E86C1CD5259D00552C18 /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD16E86B1CD5258C00552C18 /* Minecraft.ttf */; };
 		CD6B6F4C1CCD2B68008E19E1 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B6F4B1CCD2B68008E19E1 /* ArrayExtension.swift */; };
 		CD87BABB1C9F075E00B73F15 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BABA1C9F075E00B73F15 /* MenuViewController.swift */; };
 		CD87BABE1C9F079500B73F15 /* UIVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BABD1C9F079500B73F15 /* UIVIewExtension.swift */; };
 		CD87BAC21C9F0A2D00B73F15 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BAC11C9F0A2D00B73F15 /* GradientButton.swift */; };
 		CD87BAC71C9F0BFF00B73F15 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BAC61C9F0BFF00B73F15 /* Card.swift */; };
 		CD87BAC91C9F10E000B73F15 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BAC81C9F10E000B73F15 /* Deck.swift */; };
-		CD87BACB1CA49BF900B73F15 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BACA1CA49BF900B73F15 /* Constants.swift */; };
+		CD87BACB1CA49BF900B73F15 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BACA1CA49BF900B73F15 /* Global.swift */; };
 		CD87BACF1CA49D8800B73F15 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BACE1CA49D8800B73F15 /* PlayViewController.swift */; };
 		CDE5F79F1C9DA47200CF8B65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F79E1C9DA47200CF8B65 /* AppDelegate.swift */; };
 		CDE5F7A41C9DA47200CF8B65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDE5F7A21C9DA47200CF8B65 /* Main.storyboard */; };
@@ -24,13 +25,14 @@
 
 /* Begin PBXFileReference section */
 		CD1655ED1CA4A65300FA64E6 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD16E86B1CD5258C00552C18 /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
 		CD6B6F4B1CCD2B68008E19E1 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		CD87BABA1C9F075E00B73F15 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CD87BABD1C9F079500B73F15 /* UIVIewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVIewExtension.swift; sourceTree = "<group>"; };
 		CD87BAC11C9F0A2D00B73F15 /* GradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		CD87BAC61C9F0BFF00B73F15 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CD87BAC81C9F10E000B73F15 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
-		CD87BACA1CA49BF900B73F15 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CD87BACA1CA49BF900B73F15 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		CD87BACE1CA49D8800B73F15 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		CDE5F79B1C9DA47200CF8B65 /* VideoPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE5F79E1C9DA47200CF8B65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,12 +120,13 @@
 		CDF4CD201C9F0465004C07D9 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				CD16E86B1CD5258C00552C18 /* Minecraft.ttf */,
 				CDE5F7A71C9DA47200CF8B65 /* LaunchScreen.storyboard */,
 				CDE5F7A21C9DA47200CF8B65 /* Main.storyboard */,
 				CDE5F7A51C9DA47200CF8B65 /* Assets.xcassets */,
 				CDE5F79E1C9DA47200CF8B65 /* AppDelegate.swift */,
 				CDE5F7AA1C9DA47200CF8B65 /* Info.plist */,
-				CD87BACA1CA49BF900B73F15 /* Constants.swift */,
+				CD87BACA1CA49BF900B73F15 /* Global.swift */,
 			);
 			name = "Supporting files";
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			files = (
 				CDE5F7A91C9DA47200CF8B65 /* LaunchScreen.storyboard in Resources */,
 				CDE5F7A61C9DA47200CF8B65 /* Assets.xcassets in Resources */,
+				CD16E86C1CD5259D00552C18 /* Minecraft.ttf in Resources */,
 				CDE5F7A41C9DA47200CF8B65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,7 +209,7 @@
 				CD87BAC21C9F0A2D00B73F15 /* GradientButton.swift in Sources */,
 				CD87BAC71C9F0BFF00B73F15 /* Card.swift in Sources */,
 				CD6B6F4C1CCD2B68008E19E1 /* ArrayExtension.swift in Sources */,
-				CD87BACB1CA49BF900B73F15 /* Constants.swift in Sources */,
+				CD87BACB1CA49BF900B73F15 /* Global.swift in Sources */,
 				CDE5F79F1C9DA47200CF8B65 /* AppDelegate.swift in Sources */,
 				CD1655EE1CA4A65300FA64E6 /* CardCollectionViewCell.swift in Sources */,
 				CD87BABB1C9F075E00B73F15 /* MenuViewController.swift in Sources */,
@@ -325,6 +329,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Nazariy-Vlizlo.VideoPoker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -336,6 +341,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Nazariy-Vlizlo.VideoPoker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
