@@ -133,10 +133,18 @@ class Deck {
     func checkForStraight() -> Combination? {
         let sortedHandCards = handCards.sort({$0.0.rank.rawValue < $0.1.rank.rawValue})
         var currentCombination: Combination?
+        var tempCard = sortedHandCards.first!
         
-        if let firstCard = sortedHandCards.first, let lastCard = sortedHandCards.last {
-            currentCombination = lastCard.rank.rawValue - firstCard.rank.rawValue == 4 ? .Straight : nil
+        var count = 0
+        for i in 1...4 {
+            let currentCard = sortedHandCards[i]
+            if currentCard.rank.rawValue - tempCard.rank.rawValue == 1 {
+                count += 1
+                tempCard = currentCard
+            }
+            
         }
+        currentCombination = count == 4 ? .Straight : nil
         return currentCombination
     }
     

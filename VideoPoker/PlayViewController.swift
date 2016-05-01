@@ -115,6 +115,13 @@ class PlayViewController: UIViewController {
                 tempCards.removeAll()
             }
             
+            deck.handCards = [Card(rank: .Two, suit: .Hearts),
+                              Card(rank: .Three, suit: .Hearts),
+                Card(rank: .Four, suit: .Hearts),
+                Card(rank: .Five, suit: .Hearts),
+                Card(rank: .Six, suit: .Diamonds)
+            ]
+            
             let currentCombination = deck.checkForCombinations()
             let combinationString = currentCombination?.description
             balance += currentCombination!.odds * bet
