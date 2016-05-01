@@ -68,7 +68,7 @@ class PlayViewController: UIViewController {
                 return
             } else if balance - bet < 0 {
                 plusButton.enabled = false
-                combinationLabel.text = "Your bet is higher than your balance. Please decrease it."
+                combinationLabel.text = "Decrease your bet"
                 redBlickAnimation()
                 return
             } else {
@@ -115,13 +115,6 @@ class PlayViewController: UIViewController {
                 tempCards.removeAll()
             }
             
-            deck.handCards = [Card(rank: .Two, suit: .Hearts),
-                              Card(rank: .Three, suit: .Hearts),
-                Card(rank: .Four, suit: .Hearts),
-                Card(rank: .Five, suit: .Hearts),
-                Card(rank: .Six, suit: .Diamonds)
-            ]
-            
             let currentCombination = deck.checkForCombinations()
             let combinationString = currentCombination?.description
             balance += currentCombination!.odds * bet
@@ -136,9 +129,7 @@ class PlayViewController: UIViewController {
         }
         
         started = !started
-        print(cardsCollectionView.visibleCells())
         cardsCollectionView.reloadData()
-        print(cardsCollectionView.visibleCells())
     }
     
     @IBAction func addBetClicked(sender: UIButton) {

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VideoPoker/PlayViewController.swift"
-            timestampString = "483825498.518938"
+            timestampString = "483830294.871052"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VideoPoker/PlayViewController.swift"
-            timestampString = "483825498.518938"
+            timestampString = "483830294.871052"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "collectionView(_:willDisplayCell:forItemAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -216,11 +216,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VideoPoker/PlayViewController.swift"
-            timestampString = "483825498.518938"
+            timestampString = "483830294.871052"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "startButtonClicked(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -264,11 +264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VideoPoker/PlayViewController.swift"
-            timestampString = "483825498.518938"
+            timestampString = "483830294.871052"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "menuButtonClicked(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -312,11 +312,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VideoPoker/PlayViewController.swift"
-            timestampString = "483825498.518938"
+            timestampString = "483830294.871052"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "collectionView(_:didSelectItemAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
