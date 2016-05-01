@@ -11,31 +11,59 @@ import UIKit
 class PlayViewController: UIViewController {
     
     var deck = Deck()
-    var bet = 20
+    var bet = 20 {
+        didSet {
+            if bet == balance {
+                plusButton.enabled = false
+            } else if bet == 0 {
+                minusButton.enabled = false
+            } else {
+                addBetButtonsEnabled(true)
+            }
+        }
+    }
+    var balance = Constants.initialScore {
+        didSet {
+            balanceLabel.text = "Credits:\(balance)"
+        }
+    }
+    var started = true
+    
     
     @IBOutlet weak var cardsCollectionView: UICollectionView!
     @IBOutlet weak var combinationLabel: UILabel!
+    @IBOutlet weak var currentBetLabel: UILabel!
+    @IBOutlet weak var balanceLabel: UILabel!
     
-    var started = true
+    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var minusButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func addBetButtonsEnabled(enabled: Bool) {
+        plusButton.enabled = enabled
+        minusButton.enabled = enabled
     }
     
     @IBAction func startButtonClicked(sender: UIButton) {
         if started == true {
             deck.reloadCards()
             deck.handCards.removeAll()
+            balance -= bet
+            addBetButtonsEnabled(false)
             
             if let visibleCells = cardsCollectionView.visibleCells() as? [CardCollectionViewCell] {
                 for cell in visibleCells {
-                        deck.handCards.append(deck.drawRandomCard())
-                        cell.holdButton.userInteractionEnabled = true
-                        cell.holded = false
+                    deck.handCards.append(deck.drawRandomCard())
+                    cell.holdButton.userInteractionEnabled = true
+                    cell.holded = false
                 }
             }
             sender.setImage(UIImage(named: "dealDrawButtonDark_3x") ?? UIImage(), forState: .Normal)
         } else {
+            addBetButtonsEnabled(true)
             if let visibleCells = cardsCollectionView.visibleCells() as? [CardCollectionViewCell] {
                 var tempCards = [Card]()
                 for (index, cell) in visibleCells.enumerate() {
@@ -52,7 +80,9 @@ class PlayViewController: UIViewController {
                 tempCards.removeAll()
             }
             
-            let combinationString = deck.checkForCombinations()
+            let currentCombination = deck.checkForCombinations()
+            let combinationString = currentCombination?.description
+            balance += currentCombination!.odds * bet
             
             UIView.animateWithDuration(1, animations: {
                 self.combinationLabel.text = combinationString
@@ -70,7 +100,8 @@ class PlayViewController: UIViewController {
     }
     
     @IBAction func addBetClicked(sender: UIButton) {
-        
+        self.bet = self.bet + sender.tag * 5
+        self.currentBetLabel.text = "Current bet:\(self.bet)"
     }
     
 }

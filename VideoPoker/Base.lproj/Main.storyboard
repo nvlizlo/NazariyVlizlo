@@ -10,6 +10,7 @@
             <string>Minecraft</string>
             <string>Minecraft</string>
             <string>Minecraft</string>
+            <string>Minecraft</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -188,32 +189,39 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin_3x" translatesAutoresizingMaskIntoConstraints="NO" id="hhz-CP-QhD">
-                                <rect key="frame" x="20" y="348" width="34" height="34"/>
+                                <rect key="frame" x="20" y="348" width="26" height="26"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RQ-Zf-owc">
-                                <rect key="frame" x="64" y="357" width="63" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits:100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RQ-Zf-owc">
+                                <rect key="frame" x="56" y="353" width="90" height="17"/>
                                 <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="betButton_3x" translatesAutoresizingMaskIntoConstraints="NO" id="ZQS-Z2-h41">
-                                <rect key="frame" x="323" y="342" width="90" height="48"/>
+                                <rect key="frame" x="323" y="338" width="90" height="48"/>
                             </imageView>
                             <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ah-Cs-yoV">
-                                <rect key="frame" x="267" y="342" width="48" height="48"/>
+                                <rect key="frame" x="267" y="338" width="48" height="48"/>
                                 <state key="normal" image="minusButton_3x"/>
                                 <connections>
                                     <action selector="addBetClicked:" destination="9zP-f8-5Rd" eventType="touchUpInside" id="vVQ-uh-lkJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Bet:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUD-sI-4Vn">
-                                <rect key="frame" x="499" y="358" width="104" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Bet:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUD-sI-4Vn">
+                                <rect key="frame" x="499" y="354" width="123" height="17"/>
                                 <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U2-N4-2s8">
-                                <rect key="frame" x="421" y="342" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNh-ca-LjH">
+                                <rect key="frame" x="20" y="40" width="110" height="35"/>
+                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="18"/>
+                                <state key="normal" title="Menu" backgroundImage="menuButton_3x_updated">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U2-N4-2s8">
+                                <rect key="frame" x="421" y="338" width="48" height="48"/>
                                 <state key="normal" image="plusButton_3x"/>
                                 <connections>
                                     <action selector="addBetClicked:" destination="9zP-f8-5Rd" eventType="touchUpInside" id="qZe-fx-GPU"/>
@@ -237,9 +245,11 @@
                             <constraint firstItem="fUD-sI-4Vn" firstAttribute="centerY" secondItem="8U2-N4-2s8" secondAttribute="centerY" id="XoM-Qn-0Df"/>
                             <constraint firstItem="imR-XS-0c6" firstAttribute="centerX" secondItem="Cpa-6g-3g9" secondAttribute="centerX" id="Xzf-Wb-jRA"/>
                             <constraint firstItem="geK-UP-Nhw" firstAttribute="leading" secondItem="Pn3-Ny-IT9" secondAttribute="trailing" constant="30" id="aPX-cU-PMn"/>
+                            <constraint firstItem="bNh-ca-LjH" firstAttribute="leading" secondItem="Cpa-6g-3g9" secondAttribute="leading" constant="20" id="aeC-nk-ziS"/>
                             <constraint firstItem="Ly6-XM-q1c" firstAttribute="centerX" secondItem="Cpa-6g-3g9" secondAttribute="centerX" id="bbs-k1-w7v"/>
                             <constraint firstItem="ZQS-Z2-h41" firstAttribute="centerX" secondItem="Ly6-XM-q1c" secondAttribute="centerX" id="gwv-uX-SXP"/>
                             <constraint firstItem="6Ah-Cs-yoV" firstAttribute="centerY" secondItem="0RQ-Zf-owc" secondAttribute="centerY" id="iDT-N4-Itt"/>
+                            <constraint firstItem="bNh-ca-LjH" firstAttribute="top" secondItem="ILG-8x-Dow" secondAttribute="bottom" constant="20" id="kWn-ys-Ycd"/>
                             <constraint firstItem="ZQS-Z2-h41" firstAttribute="leading" secondItem="6Ah-Cs-yoV" secondAttribute="trailing" constant="8" id="ktU-37-495"/>
                             <constraint firstItem="0RQ-Zf-owc" firstAttribute="centerY" secondItem="hhz-CP-QhD" secondAttribute="centerY" id="wDn-H9-EvG"/>
                         </constraints>
@@ -248,8 +258,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="736" height="414"/>
                     <connections>
+                        <outlet property="balanceLabel" destination="0RQ-Zf-owc" id="yOt-yE-BEh"/>
                         <outlet property="cardsCollectionView" destination="Pn3-Ny-IT9" id="QqS-IO-FDt"/>
                         <outlet property="combinationLabel" destination="imR-XS-0c6" id="C4o-fN-m8X"/>
+                        <outlet property="currentBetLabel" destination="fUD-sI-4Vn" id="476-fd-bFc"/>
+                        <outlet property="minusButton" destination="6Ah-Cs-yoV" id="eva-hs-9rq"/>
+                        <outlet property="plusButton" destination="8U2-N4-2s8" id="cOj-po-MlM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3T-Vw-aFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,9 +275,10 @@
         <image name="back22_3x" width="96" height="150"/>
         <image name="background1-1" width="736" height="414"/>
         <image name="betButton_3x" width="90" height="48"/>
-        <image name="coin_3x" width="34" height="34"/>
+        <image name="coin_3x" width="26" height="26"/>
         <image name="dealDrawButton_3x" width="97" height="97"/>
         <image name="holdButton_3x" width="69" height="36"/>
+        <image name="menuButton_3x_updated" width="110" height="35"/>
         <image name="minusButton_3x" width="48" height="48"/>
         <image name="plusButton_3x" width="48" height="48"/>
     </resources>

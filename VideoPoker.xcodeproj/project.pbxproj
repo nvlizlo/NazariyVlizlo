@@ -26,6 +26,7 @@
 /* Begin PBXFileReference section */
 		CD1655ED1CA4A65300FA64E6 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD16E86B1CD5258C00552C18 /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
+		CD453B731CD5742000BF59B8 /* VideoPoker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VideoPoker.entitlements; sourceTree = "<group>"; };
 		CD6B6F4B1CCD2B68008E19E1 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		CD87BABA1C9F075E00B73F15 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CD87BABD1C9F079500B73F15 /* UIVIewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVIewExtension.swift; sourceTree = "<group>"; };
@@ -108,6 +109,7 @@
 		CDE5F79D1C9DA47200CF8B65 /* VideoPoker */ = {
 			isa = PBXGroup;
 			children = (
+				CD453B731CD5742000BF59B8 /* VideoPoker.entitlements */,
 				CD6B6F481CCD2B40008E19E1 /* Extensions */,
 				CD87BAC31C9F0BD800B73F15 /* Models */,
 				CD87BABC1C9F078700B73F15 /* Views */,
@@ -163,6 +165,12 @@
 				TargetAttributes = {
 					CDE5F79A1C9DA47200CF8B65 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 7W6E52TEYZ;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -325,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = VideoPoker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Nazariy-Vlizlo.VideoPoker";
@@ -337,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = VideoPoker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Nazariy-Vlizlo.VideoPoker";

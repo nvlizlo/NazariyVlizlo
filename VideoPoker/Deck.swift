@@ -49,6 +49,31 @@ enum Combination: Int, CustomStringConvertible {
         
         return description
     }
+    
+    var odds: Int {
+        var odds = 0
+        switch self {
+        case .NoHand:
+            odds = 0
+        case .Pair:
+            odds = 1
+        case .ThreeOfAKind:
+            odds = 3
+        case .FourOfAKind:
+            odds = 7
+        case .TwoPairs:
+            odds = 2
+        case .FullHouse:
+            odds = 6
+        case .Straight:
+            odds = 4
+        case .Flush:
+            odds = 5
+        case .StraightFlush:
+            odds = 10
+        }
+        return odds
+    }
 }
 
 class Deck {
@@ -86,7 +111,7 @@ class Deck {
         }
     }
     
-    func checkForCombinations() -> String? {
+    func checkForCombinations() -> Combination? {
         var currentCombination = Combination.NoHand
         
         if let flushCombination = checkForFlush() {
@@ -98,7 +123,7 @@ class Deck {
             currentCombination = kindCombination
         }
         
-        return currentCombination.description
+        return currentCombination
     }
     
     func checkForFlush() -> Combination? {
