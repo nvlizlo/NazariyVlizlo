@@ -31,6 +31,8 @@ class Card {
     let suit: Suit
     let rank: Rank
     
+    var holded = false
+    
     init(rank: Rank, suit:Suit) {
         self.rank = rank
         self.suit = suit

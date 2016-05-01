@@ -17,6 +17,7 @@
 		CD87BAC91C9F10E000B73F15 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BAC81C9F10E000B73F15 /* Deck.swift */; };
 		CD87BACB1CA49BF900B73F15 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BACA1CA49BF900B73F15 /* Global.swift */; };
 		CD87BACF1CA49D8800B73F15 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87BACE1CA49D8800B73F15 /* PlayViewController.swift */; };
+		CDE27C571CD652DB0062A865 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE27C561CD652DB0062A865 /* AboutViewController.swift */; };
 		CDE5F79F1C9DA47200CF8B65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F79E1C9DA47200CF8B65 /* AppDelegate.swift */; };
 		CDE5F7A41C9DA47200CF8B65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDE5F7A21C9DA47200CF8B65 /* Main.storyboard */; };
 		CDE5F7A61C9DA47200CF8B65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDE5F7A51C9DA47200CF8B65 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		CD87BAC81C9F10E000B73F15 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		CD87BACA1CA49BF900B73F15 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		CD87BACE1CA49D8800B73F15 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		CDE27C561CD652DB0062A865 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		CDE5F79B1C9DA47200CF8B65 /* VideoPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE5F79E1C9DA47200CF8B65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDE5F7A31C9DA47200CF8B65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				CD87BABA1C9F075E00B73F15 /* MenuViewController.swift */,
 				CD87BACE1CA49D8800B73F15 /* PlayViewController.swift */,
+				CDE27C561CD652DB0062A865 /* AboutViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			files = (
 				CD87BACF1CA49D8800B73F15 /* PlayViewController.swift in Sources */,
 				CD87BAC91C9F10E000B73F15 /* Deck.swift in Sources */,
+				CDE27C571CD652DB0062A865 /* AboutViewController.swift in Sources */,
 				CD87BABE1C9F079500B73F15 /* UIVIewExtension.swift in Sources */,
 				CD87BAC21C9F0A2D00B73F15 /* GradientButton.swift in Sources */,
 				CD87BAC71C9F0BFF00B73F15 /* Card.swift in Sources */,
@@ -334,10 +338,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = VideoPoker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Nazariy-Vlizlo.VideoPoker";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.MiniFriends.NazariyVlizlo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -347,10 +353,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = VideoPoker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Nazariy-Vlizlo.VideoPoker";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.MiniFriends.NazariyVlizlo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

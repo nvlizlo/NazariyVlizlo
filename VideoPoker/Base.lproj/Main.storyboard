@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9zP-f8-5Rd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bzv-pg-rEH">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Minecraft.ttf">
+            <string>Minecraft</string>
+            <string>Minecraft</string>
+            <string>Minecraft</string>
+            <string>Minecraft</string>
+            <string>Minecraft</string>
+            <string>Minecraft</string>
             <string>Minecraft</string>
             <string>Minecraft</string>
             <string>Minecraft</string>
@@ -23,71 +30,126 @@
                         <viewControllerLayoutGuide type="bottom" id="gVy-4o-rEB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hUa-pP-nDr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA9-t5-x5F" customClass="GradientButton" customModule="VideoPoker" customModuleProvider="target">
-                                <rect key="frame" x="211" y="254" width="178" height="93"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="93" id="e0z-Od-MbE"/>
-                                    <constraint firstAttribute="width" constant="178" id="yQ1-ti-EfT"/>
-                                </constraints>
-                                <state key="normal" title="Play"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA9-t5-x5F">
+                                <rect key="frame" x="313" y="190" width="110" height="35"/>
+                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="17"/>
+                                <state key="normal" title="Continue" backgroundImage="menuButton_3x_updated">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="9zP-f8-5Rd" kind="show" id="hdr-eu-XfJ"/>
+                                    <action selector="continueButtonClicked:" destination="NQw-kc-Zrt" eventType="touchUpInside" id="ldK-Y0-I4X"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBk-4r-nEH" customClass="GradientButton" customModule="VideoPoker" customModuleProvider="target">
-                                <rect key="frame" x="211" y="387" width="178" height="93"/>
-                                <state key="normal" title="High Score"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBk-4r-nEH">
+                                <rect key="frame" x="313" y="265" width="110" height="35"/>
+                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="17"/>
+                                <state key="normal" title="About" backgroundImage="menuButton_3x_updated">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="I4N-8O-Sp5" kind="show" id="SiN-mK-Abp"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnV-yi-2Gd">
-                                <rect key="frame" x="211" y="121" width="178" height="93"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejr-Ab-pIm">
+                                <rect key="frame" x="313" y="115" width="110" height="35"/>
+                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="17"/>
+                                <state key="normal" title="New game" backgroundImage="menuButton_3x_updated">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9zP-f8-5Rd" kind="show" id="na5-9m-x9V"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ZnV-yi-2Gd" firstAttribute="centerX" secondItem="aA9-t5-x5F" secondAttribute="centerX" id="C0g-7j-k1p"/>
-                            <constraint firstItem="aA9-t5-x5F" firstAttribute="top" secondItem="ZnV-yi-2Gd" secondAttribute="bottom" constant="40" id="JOI-m3-sFk"/>
+                            <constraint firstItem="ejr-Ab-pIm" firstAttribute="centerX" secondItem="aA9-t5-x5F" secondAttribute="centerX" id="5Jw-LY-AcI"/>
                             <constraint firstItem="aA9-t5-x5F" firstAttribute="centerX" secondItem="hUa-pP-nDr" secondAttribute="centerX" id="UYM-mk-hiD"/>
-                            <constraint firstItem="ZnV-yi-2Gd" firstAttribute="height" secondItem="aA9-t5-x5F" secondAttribute="height" id="Z0N-69-0s6"/>
                             <constraint firstItem="hBk-4r-nEH" firstAttribute="top" secondItem="aA9-t5-x5F" secondAttribute="bottom" constant="40" id="Z5Q-sg-avw"/>
-                            <constraint firstItem="hBk-4r-nEH" firstAttribute="width" secondItem="aA9-t5-x5F" secondAttribute="width" id="aSo-eq-CHR"/>
                             <constraint firstItem="hBk-4r-nEH" firstAttribute="centerX" secondItem="aA9-t5-x5F" secondAttribute="centerX" id="bPk-QJ-cnb"/>
-                            <constraint firstItem="ZnV-yi-2Gd" firstAttribute="width" secondItem="aA9-t5-x5F" secondAttribute="width" id="osN-lg-ePX"/>
-                            <constraint firstItem="hBk-4r-nEH" firstAttribute="height" secondItem="aA9-t5-x5F" secondAttribute="height" id="x6m-Ih-ZhR"/>
+                            <constraint firstItem="aA9-t5-x5F" firstAttribute="top" secondItem="ejr-Ab-pIm" secondAttribute="bottom" constant="40" id="k4m-wP-MLF"/>
                             <constraint firstItem="aA9-t5-x5F" firstAttribute="centerY" secondItem="hUa-pP-nDr" secondAttribute="centerY" id="xSR-5b-pYI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="c4W-a0-mDj"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="continueButton" destination="aA9-t5-x5F" id="b6G-Oa-K30"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMX-MH-WkE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="218" y="283"/>
+            <point key="canvasLocation" x="1020" y="257"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="0jc-xm-8Bz">
+            <objects>
+                <viewController id="I4N-8O-Sp5" customClass="AboutViewController" customModule="VideoPoker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fmy-7w-MpL"/>
+                        <viewControllerLayoutGuide type="bottom" id="KWg-57-Kr4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VMF-7J-qRs">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDZ-bs-pyK">
+                                <rect key="frame" x="20" y="40" width="110" height="35"/>
+                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="18"/>
+                                <state key="normal" title="Menu" backgroundImage="menuButton_3x_updated">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="menuButtonClicked:" destination="I4N-8O-Sp5" eventType="touchUpInside" id="gQl-Ah-hG7"/>
+                                    <action selector="menuButtonClicked:" destination="9zP-f8-5Rd" eventType="touchUpInside" id="hTg-9j-ivR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules &amp; additional information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2c-JP-Rdi">
+                                <rect key="frame" x="201" y="46" width="334" height="23"/>
+                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4V6-mB-OJq">
+                                <rect key="frame" x="0.0" y="95" width="736" height="319"/>
+                                <mutableString key="text">In Video Poker only the ranking of the hands is the same as in table poker. Since the game is played on a machine, your only objective is to get the best-paying hand. The machine deals a five card hand. You may keep or throw away as many cards as you like by activating the appropriate button underneath every card. After selecting the card(s) you want to hold or discard, press on "deal/draw." The cards you didn’t want to hold are replaced with new cards. If the new hand contains a winning combination, you get paid. Straight Flush – Five consecutive cards in the same suit, for instance 8, 9, 10, J and Q. Pays 10 per coin bet.
+Four of a Kind – A hand with four cards of the same value, such as four Nines. Pays 7 per coin bet.
+Full House - Three cards of one value, and two cards of another value, like three Fives and two Kings. Pays 6 per coin bet.
+Flush – Any five cards of the same suit, in no particular order. Pays 5 per coin bet.
+Straight – Any five consecutive cards, such as J, 10, 9, 8 and 7, but not in the same suit. Pays 4 per coin bet. 
+Three of a Kind - Three cards of the same value, three Sevens for instance. Pays 3 per coin bet.
+Two Pair – A hand containing two pairs, such as two Tens and two Aces. Pays 2 per coin bet.
+Pair – A pair of any cards makes up the lowest paying hand, pays 1 per coin bet.(http://www.letstalkwinning.com/vprules.htm)  All pictures was drawn in Pixen(http://www.pixenapp.com)  Original cards art was presented by the following games: - Super Meat Boy (http://www.supermeatboy.com); - Deponia (http://www.deponia.de/depo1/en/); - Binding of Isaac (http://bindingofisaac.com); - Braid (http://braid-game.com); </mutableString>
+                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="I4N-8O-Sp5" id="52f-ar-ed3"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dDZ-bs-pyK" firstAttribute="leading" secondItem="VMF-7J-qRs" secondAttribute="leading" constant="20" id="AMW-0F-LOc"/>
+                            <constraint firstItem="i2c-JP-Rdi" firstAttribute="centerY" secondItem="dDZ-bs-pyK" secondAttribute="centerY" id="Czw-wE-uiW"/>
+                            <constraint firstItem="dDZ-bs-pyK" firstAttribute="top" secondItem="fmy-7w-MpL" secondAttribute="bottom" constant="20" id="IUz-lN-DZx"/>
+                            <constraint firstAttribute="trailing" secondItem="4V6-mB-OJq" secondAttribute="trailing" id="QjG-uv-BZo"/>
+                            <constraint firstItem="i2c-JP-Rdi" firstAttribute="centerX" secondItem="VMF-7J-qRs" secondAttribute="centerX" id="Tby-Od-FtF"/>
+                            <constraint firstItem="4V6-mB-OJq" firstAttribute="leading" secondItem="VMF-7J-qRs" secondAttribute="leading" id="Tlk-Wa-vR2"/>
+                            <constraint firstItem="KWg-57-Kr4" firstAttribute="top" secondItem="4V6-mB-OJq" secondAttribute="bottom" id="Zmc-SC-1rX"/>
+                            <constraint firstItem="4V6-mB-OJq" firstAttribute="top" secondItem="dDZ-bs-pyK" secondAttribute="bottom" constant="20" id="ah6-RW-GRj"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W1x-aU-wNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="485" y="871"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="IJa-hV-gh0">
@@ -105,20 +167,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pn3-Ny-IT9">
-                                <rect key="frame" x="25" y="122" width="555" height="196"/>
+                                <rect key="frame" x="25" y="117" width="552" height="207"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="555" id="sWu-JU-gho"/>
-                                    <constraint firstAttribute="height" constant="196" id="y2i-VL-meK"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="4" id="Nvh-xQ-rlc">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Nvh-xQ-rlc">
                                     <size key="itemSize" width="96" height="208"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="q1V-oH-veG" customClass="CardCollectionViewCell" customModule="VideoPoker" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="CardCell" id="q1V-oH-veG" customClass="CardCollectionViewCell" customModule="VideoPoker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="96" height="208"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -126,7 +184,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="back22_3x" translatesAutoresizingMaskIntoConstraints="NO" id="SeJ-ku-bkm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="96" height="150"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="96" height="156"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                             <real key="value" value="0.0"/>
@@ -139,8 +197,8 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ms-fb-T3p">
-                                                    <rect key="frame" x="14" y="155" width="69" height="36"/>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ms-fb-T3p">
+                                                    <rect key="frame" x="14" y="164" width="68" height="36"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="holdButton_3x">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -158,10 +216,14 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="6ms-fb-T3p" firstAttribute="top" secondItem="SeJ-ku-bkm" secondAttribute="bottom" constant="8" id="6lA-04-qNM"/>
+                                            <constraint firstItem="SeJ-ku-bkm" firstAttribute="height" secondItem="q1V-oH-veG" secondAttribute="height" multiplier="0.75" id="Fbc-6A-1iu"/>
                                             <constraint firstItem="SeJ-ku-bkm" firstAttribute="top" secondItem="q1V-oH-veG" secondAttribute="top" id="RER-C2-bkc"/>
-                                            <constraint firstAttribute="bottom" secondItem="6ms-fb-T3p" secondAttribute="bottom" constant="17" id="Yb8-Ip-QLY"/>
+                                            <constraint firstAttribute="bottom" secondItem="6ms-fb-T3p" secondAttribute="bottom" constant="8" id="Yb8-Ip-QLY"/>
                                             <constraint firstItem="6ms-fb-T3p" firstAttribute="centerX" secondItem="SeJ-ku-bkm" secondAttribute="centerX" id="bkV-K3-Ivw"/>
                                             <constraint firstItem="SeJ-ku-bkm" firstAttribute="centerX" secondItem="q1V-oH-veG" secondAttribute="centerX" id="eOH-t0-nQU"/>
+                                            <constraint firstItem="SeJ-ku-bkm" firstAttribute="width" secondItem="q1V-oH-veG" secondAttribute="width" id="mLI-W8-nfa"/>
+                                            <constraint firstItem="6ms-fb-T3p" firstAttribute="width" secondItem="q1V-oH-veG" secondAttribute="width" multiplier="0.8" constant="-8.8000000000000114" id="neh-yA-HkC"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="cardImageView" destination="SeJ-ku-bkm" id="dXV-AD-hCn"/>
@@ -174,41 +236,34 @@
                                     <outlet property="delegate" destination="9zP-f8-5Rd" id="9WC-Di-P4r"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imR-XS-0c6">
-                                <rect key="frame" x="345" y="199" width="46" height="17"/>
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geK-UP-Nhw">
-                                <rect key="frame" x="610" y="164" width="97" height="97"/>
+                                <rect key="frame" x="597" y="176" width="73" height="73"/>
                                 <state key="normal" image="dealDrawButton_3x"/>
                                 <connections>
                                     <action selector="startButtonClicked:" destination="9zP-f8-5Rd" eventType="touchUpInside" id="SMN-bw-nRa"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin_3x" translatesAutoresizingMaskIntoConstraints="NO" id="hhz-CP-QhD">
-                                <rect key="frame" x="20" y="348" width="26" height="26"/>
+                                <rect key="frame" x="20" y="354" width="26" height="26"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits:100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RQ-Zf-owc">
-                                <rect key="frame" x="56" y="353" width="90" height="17"/>
+                                <rect key="frame" x="56" y="359" width="90" height="17"/>
                                 <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="betButton_3x" translatesAutoresizingMaskIntoConstraints="NO" id="ZQS-Z2-h41">
-                                <rect key="frame" x="323" y="338" width="90" height="48"/>
+                                <rect key="frame" x="335" y="350" width="67" height="36"/>
                             </imageView>
                             <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ah-Cs-yoV">
-                                <rect key="frame" x="267" y="338" width="48" height="48"/>
+                                <rect key="frame" x="291" y="350" width="36" height="36"/>
                                 <state key="normal" image="minusButton_3x"/>
                                 <connections>
                                     <action selector="addBetClicked:" destination="9zP-f8-5Rd" eventType="touchUpInside" id="vVQ-uh-lkJ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Bet:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUD-sI-4Vn">
-                                <rect key="frame" x="499" y="354" width="123" height="17"/>
+                                <rect key="frame" x="476" y="360" width="123" height="17"/>
                                 <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -219,39 +274,51 @@
                                 <state key="normal" title="Menu" backgroundImage="menuButton_3x_updated">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="menuButtonClicked:" destination="9zP-f8-5Rd" eventType="touchUpInside" id="tBa-bl-aPu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U2-N4-2s8">
-                                <rect key="frame" x="421" y="338" width="48" height="48"/>
+                                <rect key="frame" x="410" y="350" width="36" height="36"/>
                                 <state key="normal" image="plusButton_3x"/>
                                 <connections>
                                     <action selector="addBetClicked:" destination="9zP-f8-5Rd" eventType="touchUpInside" id="qZe-fx-GPU"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imR-XS-0c6">
+                                <rect key="frame" x="368" y="87" width="0.0" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="imR-XS-0c6" firstAttribute="centerY" secondItem="Cpa-6g-3g9" secondAttribute="centerY" id="0Xq-gL-nH8"/>
                             <constraint firstItem="Ly6-XM-q1c" firstAttribute="centerY" secondItem="Cpa-6g-3g9" secondAttribute="centerY" id="1kU-zZ-dEw"/>
                             <constraint firstItem="geK-UP-Nhw" firstAttribute="centerY" secondItem="Pn3-Ny-IT9" secondAttribute="centerY" constant="-7.5" id="1rL-DY-cOU"/>
                             <constraint firstItem="0RQ-Zf-owc" firstAttribute="leading" secondItem="hhz-CP-QhD" secondAttribute="trailing" constant="10" id="1xQ-w7-mVq"/>
                             <constraint firstItem="Pn3-Ny-IT9" firstAttribute="leading" secondItem="Cpa-6g-3g9" secondAttribute="leadingMargin" constant="5" id="6Cw-RS-mpR"/>
                             <constraint firstItem="hhz-CP-QhD" firstAttribute="leading" secondItem="Cpa-6g-3g9" secondAttribute="leadingMargin" id="9VN-bU-f5Y"/>
                             <constraint firstItem="8U2-N4-2s8" firstAttribute="leading" secondItem="ZQS-Z2-h41" secondAttribute="trailing" constant="8" id="9dQ-Gm-NtF"/>
+                            <constraint firstItem="Pn3-Ny-IT9" firstAttribute="width" secondItem="Cpa-6g-3g9" secondAttribute="width" multiplier="0.75" id="IEi-Sa-8Bd"/>
                             <constraint firstItem="8U2-N4-2s8" firstAttribute="centerY" secondItem="ZQS-Z2-h41" secondAttribute="centerY" id="JsZ-1H-EyB"/>
                             <constraint firstItem="Pn3-Ny-IT9" firstAttribute="centerY" secondItem="Cpa-6g-3g9" secondAttribute="centerY" constant="13" id="LQ5-bC-0LS"/>
                             <constraint firstItem="6Ah-Cs-yoV" firstAttribute="centerY" secondItem="ZQS-Z2-h41" secondAttribute="centerY" id="O7D-gF-1bu"/>
                             <constraint firstItem="fUD-sI-4Vn" firstAttribute="leading" secondItem="8U2-N4-2s8" secondAttribute="trailing" constant="30" id="W8E-U2-zle"/>
+                            <constraint firstItem="Pn3-Ny-IT9" firstAttribute="top" secondItem="imR-XS-0c6" secondAttribute="bottom" constant="30" id="WXe-a5-FUK"/>
                             <constraint firstItem="hhz-CP-QhD" firstAttribute="top" secondItem="Pn3-Ny-IT9" secondAttribute="bottom" constant="30" id="XRU-rc-t3h"/>
                             <constraint firstItem="fUD-sI-4Vn" firstAttribute="centerY" secondItem="8U2-N4-2s8" secondAttribute="centerY" id="XoM-Qn-0Df"/>
-                            <constraint firstItem="imR-XS-0c6" firstAttribute="centerX" secondItem="Cpa-6g-3g9" secondAttribute="centerX" id="Xzf-Wb-jRA"/>
-                            <constraint firstItem="geK-UP-Nhw" firstAttribute="leading" secondItem="Pn3-Ny-IT9" secondAttribute="trailing" constant="30" id="aPX-cU-PMn"/>
+                            <constraint firstItem="geK-UP-Nhw" firstAttribute="leading" secondItem="Pn3-Ny-IT9" secondAttribute="trailing" constant="20" id="aPX-cU-PMn"/>
                             <constraint firstItem="bNh-ca-LjH" firstAttribute="leading" secondItem="Cpa-6g-3g9" secondAttribute="leading" constant="20" id="aeC-nk-ziS"/>
                             <constraint firstItem="Ly6-XM-q1c" firstAttribute="centerX" secondItem="Cpa-6g-3g9" secondAttribute="centerX" id="bbs-k1-w7v"/>
+                            <constraint firstItem="Pn3-Ny-IT9" firstAttribute="height" secondItem="Cpa-6g-3g9" secondAttribute="height" multiplier="0.5" id="fXa-19-hb8"/>
                             <constraint firstItem="ZQS-Z2-h41" firstAttribute="centerX" secondItem="Ly6-XM-q1c" secondAttribute="centerX" id="gwv-uX-SXP"/>
                             <constraint firstItem="6Ah-Cs-yoV" firstAttribute="centerY" secondItem="0RQ-Zf-owc" secondAttribute="centerY" id="iDT-N4-Itt"/>
                             <constraint firstItem="bNh-ca-LjH" firstAttribute="top" secondItem="ILG-8x-Dow" secondAttribute="bottom" constant="20" id="kWn-ys-Ycd"/>
                             <constraint firstItem="ZQS-Z2-h41" firstAttribute="leading" secondItem="6Ah-Cs-yoV" secondAttribute="trailing" constant="8" id="ktU-37-495"/>
                             <constraint firstItem="0RQ-Zf-owc" firstAttribute="centerY" secondItem="hhz-CP-QhD" secondAttribute="centerY" id="wDn-H9-EvG"/>
+                            <constraint firstItem="imR-XS-0c6" firstAttribute="centerX" secondItem="Ly6-XM-q1c" secondAttribute="centerX" id="xBk-0J-Hte"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -268,18 +335,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3T-Vw-aFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="257"/>
+            <point key="canvasLocation" x="1802" y="257"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y9t-pD-FW6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="bzv-pg-rEH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ycO-Nx-lw7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NQw-kc-Zrt" kind="relationship" relationship="rootViewController" id="CNp-ck-Df3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u0f-C1-5kX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208" y="257"/>
         </scene>
     </scenes>
     <resources>
         <image name="back22_3x" width="96" height="150"/>
         <image name="background1-1" width="736" height="414"/>
-        <image name="betButton_3x" width="90" height="48"/>
+        <image name="betButton_3x" width="67" height="36"/>
         <image name="coin_3x" width="26" height="26"/>
-        <image name="dealDrawButton_3x" width="97" height="97"/>
-        <image name="holdButton_3x" width="69" height="36"/>
+        <image name="dealDrawButton_3x" width="73" height="73"/>
+        <image name="holdButton_3x" width="68" height="36"/>
         <image name="menuButton_3x_updated" width="110" height="35"/>
-        <image name="minusButton_3x" width="48" height="48"/>
-        <image name="plusButton_3x" width="48" height="48"/>
+        <image name="minusButton_3x" width="36" height="36"/>
+        <image name="plusButton_3x" width="36" height="36"/>
     </resources>
 </document>

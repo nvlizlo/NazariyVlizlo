@@ -13,9 +13,9 @@ class PlayViewController: UIViewController {
     var deck = Deck()
     var bet = 20 {
         didSet {
-            if bet == balance {
+            if bet >= balance {
                 plusButton.enabled = false
-            } else if bet == 0 {
+            } else if bet <= 0 {
                 minusButton.enabled = false
             } else {
                 addBetButtonsEnabled(true)
@@ -47,8 +47,33 @@ class PlayViewController: UIViewController {
         minusButton.enabled = enabled
     }
     
+    func redBlickAnimation() {
+        UIView.transitionWithView(currentBetLabel, duration: 0.3, options: .TransitionCrossDissolve, animations: {
+            self.currentBetLabel.textColor = UIColor.redColor()
+        }) { completed in
+            if completed {
+                self.currentBetLabel.textColor = UIColor.blackColor()
+            }
+            
+        }
+    }
+    
     @IBAction func startButtonClicked(sender: UIButton) {
+        
         if started == true {
+            if balance == 0 {
+                addBetButtonsEnabled(false)
+                combinationLabel.text = "Game Over"
+                sender.enabled = false
+                return
+            } else if balance - bet < 0 {
+                plusButton.enabled = false
+                combinationLabel.text = "Your bet is higher than your balance. Please decrease it."
+                redBlickAnimation()
+                return
+            } else {
+                currentBetLabel.textColor = UIColor.blackColor()
+            }
             deck.reloadCards()
             deck.handCards.removeAll()
             balance -= bet
@@ -57,10 +82,13 @@ class PlayViewController: UIViewController {
             if let visibleCells = cardsCollectionView.visibleCells() as? [CardCollectionViewCell] {
                 for cell in visibleCells {
                     deck.handCards.append(deck.drawRandomCard())
-                    cell.holdButton.userInteractionEnabled = true
+                    cell.holdButton.enabled = true
+                    cell.userInteractionEnabled = true
                     cell.holded = false
                 }
             }
+            let currentCombination = deck.checkForCombinations()
+            combinationLabel.text = currentCombination?.description
             sender.setImage(UIImage(named: "dealDrawButtonDark_3x") ?? UIImage(), forState: .Normal)
         } else {
             addBetButtonsEnabled(true)
@@ -71,7 +99,8 @@ class PlayViewController: UIViewController {
                         tempCards.append(deck.handCards[index])
                         deck.handCards[index] = deck.drawRandomCard()
                     }
-                    cell.holdButton.userInteractionEnabled = false
+                    cell.holdButton.enabled = false
+                    cell.userInteractionEnabled = false
                     cell.holdButton.setImage(UIImage(named: "holdButton_3x") ?? UIImage(), forState: .Normal)
                 }
                 for tempCard in tempCards {
@@ -84,19 +113,19 @@ class PlayViewController: UIViewController {
             let combinationString = currentCombination?.description
             balance += currentCombination!.odds * bet
             
-            UIView.animateWithDuration(1, animations: {
-                self.combinationLabel.text = combinationString
-                self.combinationLabel.alpha = 1
-                }, completion: { completed in
-                    if completed {
-                        UIView.animateWithDuration(3) {self.combinationLabel.alpha = 0}
-                    }
-            })
+            combinationLabel.text = combinationString
+            if balance == 0 {
+                addBetButtonsEnabled(false)
+                sender.enabled = false
+                combinationLabel.text = "Game Over"
+            }
             sender.setImage(UIImage(named: "dealDrawButton_3x") ?? UIImage(), forState: .Normal)
         }
         
         started = !started
+        print(cardsCollectionView.visibleCells())
         cardsCollectionView.reloadData()
+        print(cardsCollectionView.visibleCells())
     }
     
     @IBAction func addBetClicked(sender: UIButton) {
@@ -104,6 +133,18 @@ class PlayViewController: UIViewController {
         self.currentBetLabel.text = "Current bet:\(self.bet)"
     }
     
+    @IBAction func menuButtonClicked(sender: UIButton) {
+        var menuViewController: MenuViewController?
+        if let viewControllers = self.navigationController?.viewControllers {
+            for viewController in viewControllers {
+                if viewController is MenuViewController {
+                    menuViewController = viewController as? MenuViewController
+                }
+            }
+            menuViewController?.continuedViewController = self
+            self.navigationController?.popToViewController(menuViewController!, animated: true)
+        }
+    }
 }
 
 //MARK: - UICollectionViewDataSource
@@ -116,6 +157,7 @@ extension PlayViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         return collectionView.dequeueReusableCellWithReuseIdentifier("CardCell", forIndexPath: indexPath) ?? UICollectionViewCell()
     }
+    
 }
 
 //MARK: - UICollectionViewDelegate
@@ -126,5 +168,17 @@ extension PlayViewController: UICollectionViewDelegate {
             let card = deck.handCards[indexPath.row]
             cell.cardImageView.image = UIImage(named: "\(card.suit.rawValue)\(card.rank.rawValue)")
         }
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? CardCollectionViewCell {
+            cell.holded = !cell.holded
+        }
+    }
+}
+
+extension PlayViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width / 5 - 10, height: collectionView.frame.size.height)
     }
 }

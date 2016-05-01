@@ -30,21 +30,21 @@ enum Combination: Int, CustomStringConvertible {
         case .NoHand:
             description = "No hand"
         case .Pair:
-            description = "Pair"
+            description = "Pair!"
         case .ThreeOfAKind:
-            description = "Three of a Kind"
+            description = "Three of a Kind!"
         case .FourOfAKind:
-            description = "Four of a Kind"
+            description = "Four of a Kind!"
         case .TwoPairs:
-            description = "Two pairs"
+            description = "Two pairs!"
         case .FullHouse:
-            description = "Full House"
+            description = "Full House!"
         case .Straight:
-            description = "Straight"
+            description = "Straight!"
         case .Flush:
-            description = "Flush"
+            description = "Flush!"
         case .StraightFlush:
-            description = "Straight Flush"
+            description = "Straight Flush!"
         }
         
         return description
