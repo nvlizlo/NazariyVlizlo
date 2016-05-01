@@ -98,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDZ-bs-pyK">
-                                <rect key="frame" x="20" y="40" width="110" height="35"/>
+                                <rect key="frame" x="10" y="30" width="110" height="35"/>
                                 <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="18"/>
                                 <state key="normal" title="Menu" backgroundImage="menuButton_3x_updated">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -109,13 +109,16 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules &amp; additional information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2c-JP-Rdi">
-                                <rect key="frame" x="201" y="46" width="334" height="23"/>
-                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="23"/>
+                                <rect key="frame" x="216" y="37" width="305" height="21"/>
+                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="21"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4V6-mB-OJq">
-                                <rect key="frame" x="0.0" y="95" width="736" height="319"/>
+                                <rect key="frame" x="0.0" y="85" width="736" height="329"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
                                 <mutableString key="text">In Video Poker only the ranking of the hands is the same as in table poker. Since the game is played on a machine, your only objective is to get the best-paying hand. The machine deals a five card hand. You may keep or throw away as many cards as you like by activating the appropriate button underneath every card. After selecting the card(s) you want to hold or discard, press on "deal/draw." The cards you didn’t want to hold are replaced with new cards. If the new hand contains a winning combination, you get paid. Straight Flush – Five consecutive cards in the same suit, for instance 8, 9, 10, J and Q. Pays 10 per coin bet.
 Four of a Kind – A hand with four cards of the same value, such as four Nines. Pays 7 per coin bet.
 Full House - Three cards of one value, and two cards of another value, like three Fives and two Kings. Pays 6 per coin bet.
@@ -134,9 +137,9 @@ Pair – A pair of any cards makes up the lowest paying hand, pays 1 per coin be
                         </subviews>
                         <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="dDZ-bs-pyK" firstAttribute="leading" secondItem="VMF-7J-qRs" secondAttribute="leading" constant="20" id="AMW-0F-LOc"/>
+                            <constraint firstItem="dDZ-bs-pyK" firstAttribute="leading" secondItem="VMF-7J-qRs" secondAttribute="leading" constant="10" id="AMW-0F-LOc"/>
                             <constraint firstItem="i2c-JP-Rdi" firstAttribute="centerY" secondItem="dDZ-bs-pyK" secondAttribute="centerY" id="Czw-wE-uiW"/>
-                            <constraint firstItem="dDZ-bs-pyK" firstAttribute="top" secondItem="fmy-7w-MpL" secondAttribute="bottom" constant="20" id="IUz-lN-DZx"/>
+                            <constraint firstItem="dDZ-bs-pyK" firstAttribute="top" secondItem="fmy-7w-MpL" secondAttribute="bottom" constant="10" id="IUz-lN-DZx"/>
                             <constraint firstAttribute="trailing" secondItem="4V6-mB-OJq" secondAttribute="trailing" id="QjG-uv-BZo"/>
                             <constraint firstItem="i2c-JP-Rdi" firstAttribute="centerX" secondItem="VMF-7J-qRs" secondAttribute="centerX" id="Tby-Od-FtF"/>
                             <constraint firstItem="4V6-mB-OJq" firstAttribute="leading" secondItem="VMF-7J-qRs" secondAttribute="leading" id="Tlk-Wa-vR2"/>
@@ -238,6 +241,7 @@ Pair – A pair of any cards makes up the lowest paying hand, pays 1 per coin be
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geK-UP-Nhw">
                                 <rect key="frame" x="597" y="176" width="73" height="73"/>
+                                <accessibility key="accessibilityConfiguration" hint="Type to start your game" label="Deal/Draw"/>
                                 <state key="normal" image="dealDrawButton_3x"/>
                                 <connections>
                                     <action selector="startButtonClicked:" destination="9zP-f8-5Rd" eventType="touchUpInside" id="SMN-bw-nRa"/>
@@ -257,6 +261,7 @@ Pair – A pair of any cards makes up the lowest paying hand, pays 1 per coin be
                             </imageView>
                             <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ah-Cs-yoV">
                                 <rect key="frame" x="291" y="350" width="36" height="36"/>
+                                <accessibility key="accessibilityConfiguration" label="Decrease Bet by 5"/>
                                 <state key="normal" image="minusButton_3x"/>
                                 <connections>
                                     <action selector="addBetClicked:" destination="9zP-f8-5Rd" eventType="touchUpInside" id="vVQ-uh-lkJ"/>
@@ -280,6 +285,7 @@ Pair – A pair of any cards makes up the lowest paying hand, pays 1 per coin be
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U2-N4-2s8">
                                 <rect key="frame" x="410" y="350" width="36" height="36"/>
+                                <accessibility key="accessibilityConfiguration" label="Increase bet by 5"/>
                                 <state key="normal" image="plusButton_3x"/>
                                 <connections>
                                     <action selector="addBetClicked:" destination="9zP-f8-5Rd" eventType="touchUpInside" id="qZe-fx-GPU"/>

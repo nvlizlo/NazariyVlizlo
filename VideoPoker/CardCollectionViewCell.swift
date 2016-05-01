@@ -22,9 +22,19 @@ class CardCollectionViewCell: UICollectionViewCell {
     
     override func drawRect(rect: CGRect) {
         //backgroundView = UIImageView(image: UIImage(named: "back22"))
+        self.isAccessibilityElement = true
     }
     
     @IBAction func holdButtonClicked(sender: UIButton) {
         holded = !holded
-    }    
+    }
+    
+    override func accessibilityElementDidBecomeFocused() {
+        if let collectionView = self.superview as? UICollectionView {
+            collectionView.scrollToItemAtIndexPath(collectionView.indexPathForCell(self)!,
+                                                    atScrollPosition: [.CenteredHorizontally, .CenteredVertically],
+                                                    animated: false)
+            UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, self)
+        }
+    }
 }

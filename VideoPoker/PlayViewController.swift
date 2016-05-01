@@ -86,6 +86,9 @@ class PlayViewController: UIViewController {
                     cell.userInteractionEnabled = true
                     cell.holded = false
                 }
+                for card in deck.handCards {
+                    card.holded = false
+                }
             }
             let currentCombination = deck.checkForCombinations()
             combinationLabel.text = currentCombination?.description
@@ -94,14 +97,17 @@ class PlayViewController: UIViewController {
             addBetButtonsEnabled(true)
             if let visibleCells = cardsCollectionView.visibleCells() as? [CardCollectionViewCell] {
                 var tempCards = [Card]()
-                for (index, cell) in visibleCells.enumerate() {
-                    if !cell.holded {
-                        tempCards.append(deck.handCards[index])
-                        deck.handCards[index] = deck.drawRandomCard()
-                    }
+                for cell in visibleCells {
                     cell.holdButton.enabled = false
                     cell.userInteractionEnabled = false
                     cell.holdButton.setImage(UIImage(named: "holdButton_3x") ?? UIImage(), forState: .Normal)
+                }
+                
+                for (index, card) in deck.handCards.enumerate() {
+                    if !card.holded {
+                        tempCards.append(deck.handCards[index])
+                        deck.handCards[index] = deck.drawRandomCard()
+                    }
                 }
                 for tempCard in tempCards {
                     deck.addCard(tempCard)
@@ -167,11 +173,14 @@ extension PlayViewController: UICollectionViewDelegate {
         if let cell = cell as? CardCollectionViewCell where deck.handCards.count > 0 {
             let card = deck.handCards[indexPath.row]
             cell.cardImageView.image = UIImage(named: "\(card.suit.rawValue)\(card.rank.rawValue)")
+            cell.accessibilityLabel = "Playing card - \(card.rank) of \(card.suit)"
         }
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? CardCollectionViewCell {
+            let card = deck.handCards[indexPath.row]
+            card.holded = !card.holded
             cell.holded = !cell.holded
         }
     }
